@@ -1,0 +1,53 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+  }
+  
+  .example-header {
+    min-height: 64px;
+    padding: 8px 24px 0;
+  }
+  
+  
+  .mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
+
+  form {
+    min-width: 150px;
+    width: 100%;
+  }
+  .form-control{
+      text-align: center;
+      display: block;
+      font-size: 1.3em;
+      margin-bottom: 20px;
+  }
+
+  .form-control input{
+    box-shadow: black 1px 1px 3px;
+    font-size: 1.2em;
+    padding: 11px;
+  }
+
+  .form-control label{
+    font-size: 1.3em;
+  }
+  
+  .main-but{
+    background-color: rgb(54, 54, 246);
+    width: 90%;
+    margin: auto;
+    display: block;
+    font-size: 1.3em;
+    padding: 5px;
+    font-weight: bold;
+    color: wheat;
+    margin-bottom: 49px;
+  }
+  .full-width {
+    width: 100%;
+  }
+  

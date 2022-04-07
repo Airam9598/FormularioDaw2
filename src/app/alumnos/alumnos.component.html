@@ -1,0 +1,85 @@
+<div class="container">
+    <h1 class="mt-2 d-flex justify-content-center">Panel de control</h1>
+  
+    <div class="row">
+      <div class="col-6">
+        <h2>Agregar Alumno</h2>
+        <form >
+            <input
+              id="id"
+              type="hidden"
+      
+            />
+            <mat-form-field class="form-control">
+            <label>Nombre</label>
+
+            <input matInput [(ngModel)]="Nameint"
+            [ngModelOptions]="{standalone: true}"
+              type="text"
+              id="Nameint"
+          
+            />
+            </mat-form-field>
+            <mat-form-field class="form-control">
+            <label>Edad</label>
+            <input matInput [(ngModel)]="Ageint"
+  
+            [ngModelOptions]="{standalone: true}"
+              type="number"
+            />
+            </mat-form-field>
+            <mat-form-field class="form-control">
+            <label>Descripcción</label>
+            <input matInput [(ngModel)]="desint"
+
+            [ngModelOptions]="{standalone: true}"
+              type="text"
+            />
+            </mat-form-field>
+
+          <button mat-raised-button class="main-but" color="primary" (click)="clcikbu($event)">Enviar</button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="example-container mat-elevation-z8">
+    
+      <table mat-table #table [dataSource]="dataSource">
+    
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="age">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Edad </th>
+          <td mat-cell *matCellDef="let element"> {{element.Age}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="decript">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Descripción </th>
+          <td mat-cell *matCellDef="let element"> {{element.Description}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-raised-button color="primary" style="background-color: green;color: white;font-weight: bold;" (click)="editAlumno(row)">
+              Editar
+            </button>
+            <button  mat-raised-button color="warn" style="background-color: rgb(201, 9, 9);color: white;font-weight: bold;" (click)="eliminarAlumno(row.id)" color="warn">
+              Eliminar
+            </button>
+          </td>
+        </ng-container>
+    
+        <!-- Weight Column -->
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table >
+    </div>
+  </div>
